@@ -13,16 +13,16 @@ public class MusicService {
  public String saveMusic(MusicModel music) throws Exception {
      MusicModel music1 = music.getId()==null?new MusicModel():
              respository.findById(music.getId()).orElseThrow(() ->new RuntimeException("NO_DATE_FOUND"));
-     if(music.getTitle()!=null){
+     if(music.getTitle()==null){
          throw new Exception("Title should not be null");
      }
-     if(music.getArtist()!=null){
+     if(music.getArtist()==null){
          throw new Exception("Artist should not be null");
      }
-     if(music.getGenre()!=null){
+     if(music.getGenre()==null){
          throw new Exception("Genre should not be null");
      }
-     if(music.getReleaseDate()!=null){
+     if(music.getReleaseDate()==null){
          throw new Exception("Release Date should not be null");
      }
      respository.save(music);
