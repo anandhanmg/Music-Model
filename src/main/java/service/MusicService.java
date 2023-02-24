@@ -26,6 +26,6 @@ public class MusicService {
          throw new Exception("Release Date should not be null");
      }
      respository.save(music);
-     return "CREATED";
+     return "Music has CREATED successfully with id"+music.getId();
  }
 }
